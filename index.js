@@ -9,4 +9,5 @@ app.listen(port, () => {
 
 app.use((req, res) => {
   console.log("request received");
+  res.send("this a response");
 });
