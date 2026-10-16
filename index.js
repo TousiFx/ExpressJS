@@ -10,5 +10,6 @@ app.listen(port, () => {
 app.use((req, res) => {
   console.log("request received");
   let code = "<div>code</div>";
+  console.log(req);
   res.send(code);
 });
