@@ -7,9 +7,16 @@ app.listen(port, () => {
   console.log(`app is listening on port ${port}`);
 });
 
-app.use((req, res) => {
-  console.log("request received");
-  let code = "<div>code</div>";
-  console.log(req);
-  res.send(code);
+app.get("/", (req, res) => {
+  res.send("hello  this is root path");
+});
+app.get("/apple", (req, res) => {
+  res.send("you connect to the apple path");
+});
+app.get("/banana", (req, res) => {
+  res.send("you connect to the banana path");
+});
+
+app.get("/*splat", (req, res) => {
+  res.send("Page not found");
 });
